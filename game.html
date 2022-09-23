@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<title>テストサイト</title>
+<meta name="author" content="panaco">
+<meta name="description" content="ここにディスクリプションを書く">
+<meta name="keywords" content="コンマ区切りでキーワードを書く">
+<link rel="icon" href="ファヴィコンを置く">
+
+<!-- Facebook -->
+<meta property="og:title" content="テストサイト">
+<meta property="og:description" content="ここにディスクリプションを書く">
+<meta property="og:type" content="article">
+<meta property="og:url" content="ここにURL">
+<meta property="og:image" content="画像URL">
+<meta property="og:site_name" content="テストサイト">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:creator" content="">
+<meta name="twitter:title" content="テストサイト">
+<meta name="twitter:description" content="ここにディスクリプションを書く">
+<meta name="twitter:image:src" content="画像URL">
+<!-- //Twitter Card -->
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="./game.css">
+<script type="text/javascript" src="bird.js"></script>
+
+</head>
+<body id="black" class="bg_main">
+  <section>
+    <a class="fullscreen_btn">フルスクリーンで遊ぶ</a>
+  </section>
+  <section class="game_wrap">
+    <div class="window girl">
+      <p class="score">0m</p>
+        <div class="bird"></div>
+      
+      <div class="pipe hidden"></div>
+      <div class="pipe hidden"></div>
+      <div class="start_btn">スタート</div>
+
+    </section>
+    <section class="howto">
+      <p class="title">あそびかた</p>
+      <div class="howto_description">
+        <p><ruby><rb>画面</rb><rp>（</rp><rt>がめん</rt><rp>）</rp></ruby>をクリックする（タッチする）とユニコーンが<ruby><rb>進</rb><rp>（</rp><rt>すす</rt><rp>）</rp></ruby>むよ</p>
+        <p><ruby><rb>星</rb><rp>（</rp><rt>ほし</rt><rp>）</rp></ruby>や<ruby><rb>雲</rb><rp>（</rp><rt>くも</rt><rp>）</rp></ruby>にぶつからないように<ruby><rb>進</rb><rp>（</rp><rt>すす</rt><rp>）</rp></ruby>んでね</p>
+      </div>
+    </section>
+    <section class="finishArea">
+      <div class="finish">
+        <img src="./_img/game/girl/finish.png"><br/>
+        <p class="result"></p>
+        <p><a href="http://twitter.com/share?url=https://google.com&text=結果がでたよ&via=[ツイート内に含むユーザ名]&related=[ツイート後に表示されるユーザー]&hashtags=[ハッシュタグ]" target="_blank">
+          けっかをツイートする
+        </a></p>
+        <p><a href="http://twitter.com/share?url=https://google.com&text=結果がでたよ&via=[ツイート内に含むユーザ名]&related=[ツイート後に表示されるユーザー]&hashtags=[ハッシュタグ]" target="_blank">
+          もういっかいがんばる
+        </a></p>
+        <p><a href="http://twitter.com/share?url=https://google.com&text=結果がでたよ&via=[ツイート内に含むユーザ名]&related=[ツイート後に表示されるユーザー]&hashtags=[ハッシュタグ]" target="_blank">
+          ゲームせんたくにもどる
+        </a></p>
+  
+      </div>
+    </section>
+
+
+    
+
+  </div>
+</body>

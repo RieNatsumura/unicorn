@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+html {
+  font-size: 62.5%; /* -> 10px; */
+}
+
+body {
+  width: 100%;
+  font-size: 14px;
+  font-size: 1.4em; /* -> 14px; */
+}
+/* -----------------------------
+Base 
+------------------------------ */
+.bg_main { background: #F5F5F5; }
+.bg_red { background: #7DCACA; }
+
+.c-white { color: #FFF;}
+
+.tw-600 { font-weight: 600;}
+.tw-700 { font-weight: 700;}
+.tw-800 { font-weight: 800;}
+
+
+
+.game_wrap {
+  position: relative;
+  width: calc(700/750*100vw);
+  margin: calc(20/750*100vw) auto;
+}
+.window {
+  position: relative;
+  height: calc(700/750*100vw);  
+  overflow: hidden;
+  margin-bottom: calc(10/750*100vw);
+}
+.window.girl {
+  background: url('./_img/bg_unicorn.jpg') repeat-x;
+  background-size: 50% 100%;
+}
+.window.scroll {
+  animation: scroll-anim 1.5s linear infinite;
+}
+@keyframes scroll-anim {
+	100% {
+		background-position: -100% 0;
+	}
+}
+.window.boy {
+  background: url('https://cdn.piapro.jp/thumb_i/2w/2w87hv4no5jw307p_20200828185012_0740_0500.png');
+}
+
+@media screen and (min-width: 641px) {
+  .game_wrap {
+    width: calc(1000/1360*100%);
+    margin: calc(20/1360*100vw) auto;
+  }
+  .window {
+    margin-bottom: calc(10/1000*100vw);
+  }
+}
+
+@media screen and (min-width: 1361px) {
+  .game_wrap {
+    width: 1000px;
+    margin: 20px auto;
+  }
+  .window {
+    margin-bottom: 10px;
+  }
+}
+
+.fullscreen_btn {
+  display: block;
+  width: calc(700/750*100vw);
+  margin: calc(50/750*100vw) auto;
+  background: #7DCACA;
+  border-radius: calc(50/750*100vw);
+  color: #FFF;
+  text-align: center;
+  padding: calc(15/750*100vw) 0;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+
+  .start_btn {
+    position: absolute;
+    width: 65%;
+    top: 75%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: calc(14/700*100vw) 0;
+    text-align: center;
+    background: #7DCACA;
+    color: #FFF;
+    font-size: 2em;
+    font-weight: 900;
+
+  }
+  /* Score */
+  .score {
+    position: absolute;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 250%;
+    padding-top: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 4;
+  }
+  
+  /* Bird */
+  .bird {
+      height: calc(130/750*100vw);
+      width: calc(80/750*100vw);
+      background: url('./_img/unicorn.png') no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      bottom: 50%;
+      left: 130px;
+      z-index: 3;
+    animation: birdFlap 0.8s steps(3, end) infinite alternate;
+    transition: transform 0.5s;
+  }
+  
+  @keyframes birdFlap {  
+    /*0% {background-position: 0 84px;}
+    100% {background-position: 0 0;}*/
+    0% , 100%{
+      transform: rotate(10deg);
+    }
+    50%{
+      transform: rotate(-10deg);
+    }
+  }
+  
+  /* Pipes */
+  .pipe {
+      width: 60px;
+      height: 100%;
+      position: absolute;
+      right: -60px;
+      z-index: 2;
+  }
+  
+  .pipe.hidden {
+    display: none;
+  }
+  
+  .pipe .topHalf {
+      /*background: url('https://s21.postimg.org/kyr2rnpzr/pipe.png') bottom;*/
+      background: rgba(0,0,0,0.2);
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
+  
+  .pipe .bottomHalf {
+    background: rgba(0,0,0,0.2);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+  }
+  .finishArea {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    z-index: 5;
+  }
+  .finish {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 300px;
+      text-align: center;
+      background: rgba(255,255,255,0.5);
+  }
+  .finish img{
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+
+
+  .howto {
+    position: relative;
+    width: calc(650/750*100vw);
+    margin: calc(50/750*100vw) auto;
+    background-color: #FFF;
+    border: 1px solid #E1E300;
+    padding: 1em;
+  }
+  .howto .title { 
+    padding: calc(20/750*100vw) calc(10/750*100vw);
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #6E7D84;
+
+  }
+  howto_description {
+    color: #6E7D84;
+
+  }
+  @media screen and (min-width: 641px) {
+    .game_wrap {
+      width: calc(1000/1360*100%);
+    }
+
+  }
+  
+  @media screen and (min-width: 1361px) {
+    .game_wrap {
+      width: 1000px;
+      margin: 20px auto;
+    }
+
+  }

@@ -1,0 +1,189 @@
+/* ------------------
+sp: font-soze早見表 https://qiita.com/katsunory/items/3bede89cee8e2ded8426
+10px
+sp: 3.125vw;
+pc: 2rem; 20px;
+12px
+sp: 3.75vw;
+pc: 2.4rem; 24px;
+14px
+sp: 4.375vw;
+pc: 2.8rem; 28px;
+16px
+sp: 5vw
+pc: 3.2rem; 32px
+------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+}
+
+html {
+  font-size: 62.5%; /* -> 10px; */
+}
+
+body {
+  width: 100%;
+  color: #F6F5EE;
+  font-size: 14px;
+  font-size: 1.4em; /* -> 14px; */
+}
+
+a { text-decoration: none; color: #000;}
+
+@media screen and (max-width: 641px) {
+  .nosp { display: none; }
+}
+@media screen and (min-width: 641px) {
+
+  .nopc { display: none; }
+}
+@media screen and (min-width: 1361px) {
+  body { width: 1361px; margin: 0 auto; }
+}
+
+/* -----------------------------
+Base 
+------------------------------ */
+.bg_main { background: #F6F5EE; }
+.bg_red { background: #7DCACA; }
+
+.c-white { color: #FFF;}
+.c-pink { color: #EF8DB1;}
+
+.tw-600 { font-weight: 600;}
+.tw-700 { font-weight: 700;}
+.tw-800 { font-weight: 800;}
+/* -----------------------------
+secHeader
+------------------------------ */
+.secHeader { position: fixed; }
+.sHeader__logo {
+  margin: calc(10/750*100vw) calc(10/750*100vw);
+  padding: calc(10/750*100vw) calc(10/750*100vw);
+  background: #d9d9d9;
+  position: relative;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.all_wrap {
+  width: 100%;
+  padding-top: calc(65/750*100vw);
+  margin: 0 auto;
+  font-size: 4.375vw; /* 14px */
+}
+@media screen and (min-width: 641px) {
+  .all_wrap { font-size: 2.0rem; padding: calc(30/1360*100vw) 0; }
+}
+
+@media screen and (min-width: 1361px) {
+  .all_wrap { width: 1360px; font-size: 20px; padding: 30px 0; }
+}
+
+/* -----------------------------
+secTitle
+------------------------------ */
+.secTitle { text-align: center; }
+.sTitle_main { font-size: 10vw; line-height: 1.6em;}
+.sTitle_sub {}
+
+@media screen and (min-width: 641px) {
+  .sTitle_main { font-size: 6.4rem; }
+}
+
+@media screen and (min-width: 1361px) {
+  .sTitle_main { font-size: 64px; }
+}
+
+/* -----------------------------
+secMenu 
+------------------------------ */
+.secMenu {
+  width: calc(700/750*100vw);
+  margin: 0 auto;
+  background: #FFF;
+  border-color: #E1E300;
+  border-bottom-left-radius: calc(20/750*100vw);
+  border-bottom-right-radius: calc(20/750*100vw);
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-around;
+}
+.sMenu_item {
+  width: calc(650/700*100vw);
+  text-align: center;
+  margin: calc(30/700*100vw) auto;
+}
+.sMenu_item__title { margin: 0.5rem; }
+.menu_btn {}
+.sMenu_item__img {  
+  width: calc(400/700*100vw);
+  margin: 0 auto;
+  border-radius: calc(10/700*100vw);
+  text-align: center;
+  font-size: 1.5em; 
+}
+.sMenu_item__img img { width: 100%; }
+.sMenu_item__btn {
+  width: calc(400/700*100vw);
+  margin: 0.5rem auto;
+  padding: 1rem 0;
+  border-radius: calc(20/700*100vw);
+  background: #7DCACA;
+  filter: drop-shadow(1px 3px 1px #666);
+}
+
+@media screen and (min-width: 641px) {
+  .secMenu {
+    width: calc(1200/1360*100%);
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: space-around;
+  }
+  .sMenu_item {
+    width: calc(550/1200*100%);
+  }
+  .sMenu_item__img { 
+    width: 100%; 
+    border-radius: calc(10/550*100%);
+  }
+  .sMenu_item__img img { width: 100%; }
+  .sMenu_item__btn {
+    width: calc(550/550*100%);
+  }
+}
+
+@media screen and (min-width: 1361px) {
+  .secMenu {
+    width: 1200px;
+  }
+  .sMenu_item__btn {
+    border-radius: 50px;
+    padding: 2rem 0;
+
+  }
+}
+
+
+/*---------------------
+footer
+---------------------*/
+footer { padding: calc(300/750*100vw); }
