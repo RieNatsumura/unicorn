@@ -178,7 +178,7 @@ Base
     display: none;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.6);
     position: fixed;
     top: 0;
     z-index: 5;
@@ -189,16 +189,40 @@ Base
       left: 0;
       right: 0;
       margin: 0 auto;
-      width: 300px;
+      width: 80%;
+      padding: 17% 10% 5%;
       text-align: center;
-      background: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.7);
   }
   .finish img{
     width: 60%;
     margin: 0 auto;
   }
-  
-
+  .finish .result {
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 300%;
+    margin: 0 auto;
+    top: 2%;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 4;
+  }
+  .finish p a {
+    display: block;
+    width: calc(430/700*100vw);
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-radius: calc(20/700*100vw);
+    background: #7DCACA;
+    color: #FFF;
+    filter: drop-shadow(1px 3px 1px #666);
+    text-decoration: none;
+  }
 
   .howto {
     position: relative;
