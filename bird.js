@@ -1,13 +1,26 @@
 $(function(){
-	$window = $('.window'),
+  $window = $('.window'),
 	$bird = $('.bird'),
   fallTime = 1000,
   gapHeight = 150,
-  gameState = 2, /* 1:ゲーム中 ,2:ゲーム終了 */
+  gameState = 2,
   startTime = Date.now(),
   result = '0m',
   pipeId = 0;
+  var arg  = new Object;
+  url = location.search.substring(1).split('&');
+ 
+  for(i=0; url[i]; i++) {
+    var k = url[i].split('=');
+    arg[k[0]] = k[1];
+  }
   
+  var id = arg.mode;
+  $(".retry").attr('href', $('.retry').attr('href') + id);
+ 
+  if (id == 'boy') {
+    $(".window").addClass("boy").removeClass(".girl");
+  }
 
 	var int = setInterval(function(){
     if(gameState === 1){
@@ -22,10 +35,10 @@ $(function(){
     }
   }, 10);
 
-  /* マウスクリック */ 
-	$window.mousedown(function(){
+  $window.mousedown(function(){
     $('.start_btn').hide();
-    $('.window').addClass('scroll');
+    //$('.window').addClass('scroll');
+
 		birdFlap();
     if(gameState === 2){
       gameState = 1;
@@ -33,7 +46,7 @@ $(function(){
     }
 	});
   
-	$(window).keydown(function(e){
+  $(window).keydown(function(e){
 		if(e.keyCode === 32){
       $('.start_btn').hide();
 			birdFlap();
@@ -55,7 +68,7 @@ $(function(){
 	  }, 2050);
   }
   
-	function birdFlap(){
+  function birdFlap(){
     if(gameState === 1 || gameState === 2){
       $bird.css('transform', 'rotate(-20deg)');
 		  $bird.stop().animate({
@@ -71,21 +84,20 @@ $(function(){
           var end = Date.now();
           result = Math.floor((end - startTime)/1000) + 'm';
           $('.score').html(result);
+          $('.result').html(result);
         });
 	  	});
-    } 
+    }
 	}
 
-	function gravity(){
-    if(gameState === 1){
-      birdPercent = parseInt($bird.css('bottom')) / $window.height();
-      totalFallTime = fallTime * birdPercent;
-		  $bird.stop().animate({
-		  	bottom: '0'
-		  }, totalFallTime, 'linear');
-  
-      $bird.css('transform', 'rotate(90deg)');
-    }
+  function gravity(){
+    birdPercent = parseInt($bird.css('bottom')) / $window.height();
+    totalFallTime = fallTime * birdPercent;
+		$bird.stop().animate({
+			bottom: '0'
+		}, totalFallTime, 'linear');
+
+    $bird.css('transform', 'rotate(90deg)');
 	}
 
   /* おじゃま虫バーを表示 */
@@ -109,35 +121,33 @@ $(function(){
 		});
 	}
   
-  /* unicornの動きでGameOver条件*/
+
   function birdPos(){
-    /* 下にくっついたらGameover*/
     if(parseInt($bird.css('bottom')) === 0 || parseInt($bird.css('top')) === 0){
       gameEnd();
     }
-    /* パイプにくっついたらGameover*/
-    $(".pipe").each(function(i, elem) {
-      curPipe = $(elem);
-  
-      if(($bird.offset().left + $bird.width()) >= curPipe.offset().left && $bird.offset().left <= (curPipe.offset().left + curPipe.width())){
-        pipeTop = $(elem).children('.topHalf');
-        pipeBottom = $(elem).children('.bottomHalf');
+    
+    curPipe = $('.pipe:nth-of-type(5)');
+    if(curPipe.length > 0){
+      pipeTop = $('.pipe:nth-of-type(5) .topHalf');
+      pipeBottom = $('.pipe:nth-of-type(5) .bottomHalf');
 
-        if($bird.position().top < (curPipe.position().top + pipeTop.height()) || ($bird.position().top + $bird.height()) > ((curPipe.position().top + pipeTop.height()) +   gapHeight)){  
+
+      if(($bird.offset().left + $bird.width()) >= curPipe.offset().left && $bird.offset().left <= (curPipe.offset().left + curPipe.width())){
+        if($bird.offset().top < (curPipe.offset().top + pipeTop.height()) || ($bird.offset().top + $bird.height()) > ((curPipe.offset().top + pipeTop.height()) +   gapHeight)){
           gameEnd();
         }
+      } else if($bird.offset().left >= (curPipe.offset().left + curPipe.width())){
       }
-    });
+    }
   }
-  
+
   function gameEnd(){
   	clearInterval(birdPosInterval);
-    $('.window').removeClass('scroll');
   	$('.pipe').stop();
-    $('.finishArea').show();
-    $('.result').html(result);
-
-  	gameState = 2;
     gravity();
+  	gameState = 0;
+    $('.finishArea').show();
   }
+
 })

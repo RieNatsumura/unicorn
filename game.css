@@ -44,7 +44,11 @@ Base
   margin-bottom: calc(10/750*100vw);
 }
 .window.girl {
-  background: url('./_img/bg_unicorn.jpg') repeat-x;
+  background: url('./_img/game/girl/background.png') repeat-x;
+  background-size: 50% 100%;
+}
+.window.boy {
+  background: url('./_img/game/boy/background.png') repeat-x;
   background-size: 50% 100%;
 }
 .window.scroll {
@@ -55,9 +59,7 @@ Base
 		background-position: -100% 0;
 	}
 }
-.window.boy {
-  background: url('https://cdn.piapro.jp/thumb_i/2w/2w87hv4no5jw307p_20200828185012_0740_0500.png');
-}
+
 
 @media screen and (min-width: 641px) {
   .game_wrap {
@@ -90,6 +92,7 @@ Base
   padding: calc(15/750*100vw) 0;
   font-size: 2em;
   font-weight: 800;
+  text-decoration: none;
 }
 
 
@@ -123,33 +126,45 @@ Base
   }
   
   /* Bird */
-  .bird {
-      height: calc(130/750*100vw);
-      width: calc(80/750*100vw);
-      background: url('./_img/unicorn.png') no-repeat;
+  .window.girl .bird {
+      height: calc(130/700*100vw);
+      width: calc(80/700*100vw);
+
+      background: url('./_img/game/girl/bird.png') no-repeat;
       background-size: 100% auto;
       position: absolute;
       bottom: 50%;
       left: 130px;
       z-index: 3;
-    animation: birdFlap 0.8s steps(3, end) infinite alternate;
-    transition: transform 0.5s;
+      animation: unicornFlap 0.8s steps(3, end) infinite alternate;
+      transition: transform 0.5s;
   }
-  
-  @keyframes birdFlap {  
-    /*0% {background-position: 0 84px;}
-    100% {background-position: 0 0;}*/
-    0% , 100%{
-      transform: rotate(10deg);
-    }
-    50%{
-      transform: rotate(-10deg);
-    }
+  .window.boy .bird {
+    height: calc(130/700*100vw);
+    width: calc(80/700*100vw);
+    background: url('./_img/game/boy/bird.png') no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    bottom: 50%;
+    left: 130px;
+    z-index: 3;
+
+}
+@keyframes unicornFlap {  
+  /*0% {background-position: 0 84px;}
+  100% {background-position: 0 0;}*/
+  0% , 100%{
+    transform: rotate(10deg);
   }
+  50%{
+    transform: rotate(-10deg);
+  }
+}
+
   
   /* Pipes */
   .pipe {
-      width: 60px;
+      width: calc(120/700*100vw);;
       height: 100%;
       position: absolute;
       right: -60px;
@@ -160,19 +175,31 @@ Base
     display: none;
   }
   
-  .pipe .topHalf {
-      /*background: url('https://s21.postimg.org/kyr2rnpzr/pipe.png') bottom;*/
-      background: rgba(0,0,0,0.2);
+  .window.girl .pipe .topHalf {
+      background: url('./_img/game/girl/bar.png') bottom;
+      background-repeat: repeat-y;
+      background-size: 100% auto;
       position: absolute;
       top: 0;
       width: 100%;
-  }
-  
-  .pipe .bottomHalf {
-    background: rgba(0,0,0,0.2);
-      position: absolute;
+  }  
+  .window.girl .pipe .bottomHalf {
+    background: url('./_img/game/girl/bar.png') top;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    position: absolute;
       bottom: 0;
       width: 100%;
+  }
+  .window.boy .pipe .topHalf {
+    background: url('./_img/game/boy/bar.png') bottom;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  } 
+  .window.boy .pipe .bottomHalf {
+    background: url('./_img/game/boy/bar.png') top;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
   }
   .finishArea {
     display: none;
