@@ -65,19 +65,19 @@ Base
 /* -----------------------------
 secHeader
 ------------------------------ */
-.secHeader { position: fixed; }
+.secHeader { position: sticky; top: 0px; z-index: 100;}
 .sHeader__logo {
-  margin: calc(10/750*100vw) calc(10/750*100vw);
-  padding: calc(10/750*100vw) calc(10/750*100vw);
-  background: #d9d9d9;
+  width: 100%;
   position: relative;
   -ms-flex-item-align: start;
   align-self: flex-start;
 }
+.sHeader__logo img{
+  width: 100%;
+}
 
 .all_wrap {
   width: 100%;
-  padding-top: calc(65/750*100vw);
   margin: 0 auto;
   font-size: 4.375vw; /* 14px */
 }

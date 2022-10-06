@@ -4,25 +4,25 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width">
-<title>テストサイト</title>
+<title>暇つぶしサイト</title>
 <meta name="author" content="panaco">
 <meta name="description" content="ここにディスクリプションを書く">
 <meta name="keywords" content="コンマ区切りでキーワードを書く">
-<link rel="icon" href="ファヴィコンを置く">
+<link rel=”icon” href=“./favicon.ico”>
 
 <!-- Facebook -->
-<meta property="og:title" content="テストサイト">
+<meta property="og:title" content="暇つぶしサイト">
 <meta property="og:description" content="ここにディスクリプションを書く">
 <meta property="og:type" content="article">
 <meta property="og:url" content="ここにURL">
 <meta property="og:image" content="画像URL">
-<meta property="og:site_name" content="テストサイト">
+<meta property="og:site_name" content="暇つぶしサイト">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="">
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="テストサイト">
+<meta name="twitter:title" content="暇つぶしサイト">
 <meta name="twitter:description" content="ここにディスクリプションを書く">
 <meta name="twitter:image:src" content="画像URL">
 <!-- //Twitter Card -->
@@ -32,17 +32,25 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0962YVWY2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V0962YVWY2');
+</script>
 </head>
-<link rel="stylesheet" href="./top.css">
+<link rel="stylesheet" href="./_css/top.css">
 
 <body class="bg_main">
   <header class="secHeader">
-    <p class="sHeader__logo"><a href="./index.html">logo?</a></p>
+    <p class="sHeader__logo"><a href="./index.html"><img src="./_img/logo.png"></a></p>
   </header>
 
   <div class="all_wrap">
     <section class="secTitle">
-      <p class="sTitle_main c-pink tw-800">GAMES</p>
       <p class="sTitle_sub bg_red c-white">ダウンロードしなくても遊べるゲーム<br >ブラウザのまま遊べるよ！</p>
 
     </section>

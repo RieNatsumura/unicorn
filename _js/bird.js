@@ -20,6 +20,7 @@ $(function(){
  
   if (id == 'boy') {
     $(".window").addClass("boy").removeClass(".girl");
+    $(".finish_img").attr('src',$(".finish_img").attr('src').replace( 'girl', 'boy' ));
   }
 
 	var int = setInterval(function(){
@@ -72,12 +73,12 @@ $(function(){
     if(gameState === 1 || gameState === 2){
       $bird.css('transform', 'rotate(-20deg)');
 		  $bird.stop().animate({
-			  bottom: '+=60px'
+			  bottom: '+=40px'
   		}, 200, function(){
         birdPos();
         $bird.css('transform', 'rotate(0deg)');
 		  	$bird.stop().animate({
-			    bottom: '-=60px'
+			    bottom: '-=40px'
   		  }, 300, 'linear', function(){
           birdPos();
           gravity();
