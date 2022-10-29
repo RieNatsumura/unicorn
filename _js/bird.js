@@ -149,6 +149,7 @@ $(function(){
     gravity();
   	gameState = 0;
     $('.finishArea').show();
+    $('.twitter_share').attr('href', $('.twitter_share').attr('href').replace('xxxxx', result + 'すすめたよ！' ));
   }
 
 })
